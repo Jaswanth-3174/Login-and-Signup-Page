@@ -23,8 +23,8 @@
             form.addEventListener("submit", function (e) {
                 e.preventDefault();
 
-                const enteredName = document.getElementById("uname");
-                const enteredPass = document.getElementById("pass");
+                const enteredName = document.getElementById("uname").value;
+                const enteredPass = document.getElementById("pass").value;
 
                 // Get stored values from signup
                 const storedName = localStorage.getItem("signupName");
