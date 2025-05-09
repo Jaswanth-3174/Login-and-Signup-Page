@@ -27,7 +27,7 @@ form {
 
 label {
     display: block;
-    margin: 10px 80px 5px;
+    margin: 10px 150px 5px;
     text-align: left;
     display: block;
 }
@@ -51,4 +51,14 @@ button {
 }
 a{
     color: #4CAF50;
+}
+
+#message {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: red;
+}
+#message.success {
+    color: green;
 }

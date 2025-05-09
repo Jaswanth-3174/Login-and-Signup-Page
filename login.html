@@ -6,36 +6,52 @@
     <body>
         <h1 class = "t1">Welcome Back!</h1>
         <form id= "login" action="">
-            <label for="uname">UserName : </label>
+            <label for="uname"> </label>
             <input type = "text" id = "uname" placeholder="Enter your name" required><br>
 
-            <label for="pass">Password :  </label>
+            <label for="pass"> </label>
             <input type = "password" id = "pass" placeholder="Enter your password" required><br>
             
+            <div id="message"></div>
+
             <button type="submit">Login</button>
             <p>New User ? <a href="signup.html">Sign up</a></p>
         </form>
-    </body>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const form = document.getElementById("login");
+            const mDiv = document.getElementById("message");
+
+            const unameInput = document.getElementById("uname");
+            const passInput = document.getElementById("pass");
+
+            [unameInput, passInput].forEach(input => {
+                input.addEventListener("input", () => {
+                    mDiv.textContent = "";
+                    mDiv.classList.remove("success");
+                });
+            });
 
             form.addEventListener("submit", function (e) {
                 e.preventDefault();
 
-                const enteredName = document.getElementById("uname").value;
-                const enteredPass = document.getElementById("pass").value;
+                const enteredName = unameInput.value;
+                const enteredPass = passInput.value;
 
-                // Get stored values from signup
                 const storedName = localStorage.getItem("signupName");
                 const storedPass = localStorage.getItem("signupPass");
 
                 if (enteredName === storedName && enteredPass === storedPass) {
-                    alert("Login Successful!");
+                    mDiv.textContent = "Login Successful!";
+                    mDiv.classList.add("success");
+                    setTimeout(() => {
+                        window.location.href = "dashboard.html";
+                    }, 1500);
                 } else {
-                    alert("Incorrect name or password!");
+                    mDiv.textContent = "Incorrect name or password!";
                 }
             });
         });
     </script>
+    </body>
 </html>
