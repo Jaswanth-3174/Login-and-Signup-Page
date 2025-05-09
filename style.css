@@ -1,0 +1,54 @@
+body {
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 50px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    background-image: url('login3.jpg');
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+.t1{
+    padding-top : 50px;
+}
+
+form {
+    background-color: white;
+    padding: 25px 50px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 0 10px lightgray;
+}
+
+label {
+    display: block;
+    margin: 10px 80px 5px;
+    text-align: left;
+    display: block;
+}
+
+input{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+a{
+    color: #4CAF50;
+}
