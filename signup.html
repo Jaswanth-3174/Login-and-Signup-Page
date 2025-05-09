@@ -27,25 +27,22 @@
         const form = document.getElementById("signup");
 
         form.addEventListener("submit", function(e) {
-            e.preventDefault(); // prevent page reload
+            e.preventDefault();
 
-            const fullName = document.getElementById("FullName").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value.trim();
-            const cpassword = document.getElementById("cpassword").value.trim();
+            const fullName = document.getElementById("FullName");
+            const email = document.getElementById("email");
+            const password = document.getElementById("password");
+            const cpassword = document.getElementById("cpassword");
 
             if (password !== cpassword) {
                 alert("Passwords do not match!");
                 return;
             }
 
-            // Save to localStorage
             localStorage.setItem("signupName", fullName);
-            localStorage.setItem("signupEmail", email);
             localStorage.setItem("signupPass", password);
 
-            alert("Sign up successful! Redirecting to login...");
-
+            alert("Sign up successful! Login now.");
             window.location.href = "login.html";
         });
     });
