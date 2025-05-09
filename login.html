@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Home Page</title>
+        <link rel = "stylesheet" href = "style.css">
+    </head>
+    <body>
+        <h1 class = "t1">Welcome Back!</h1>
+        <form id= "login" action="">
+            <label for="uname">UserName : </label>
+            <input type = "text" id = "uname" placeholder="Enter your name" required><br>
+
+            <label for="pass">Password :  </label>
+            <input type = "password" id = "pass" placeholder="Enter your password" required><br>
+            
+            <button type="submit">Login</button>
+            <p>New User ? <a href="signup.html">Sign up</a></p>
+        </form>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("login");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const enteredName = document.getElementById("uname");
+                const enteredPass = document.getElementById("pass");
+
+                // Get stored values from signup
+                const storedName = localStorage.getItem("signupName");
+                const storedPass = localStorage.getItem("signupPass");
+
+                if (enteredName === storedName && enteredPass === storedPass) {
+                    alert("Login Successful!");
+                } else {
+                    alert("Incorrect name or password!");
+                }
+            });
+        });
+    </script>
+</html>
