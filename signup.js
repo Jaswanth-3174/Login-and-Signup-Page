@@ -28,30 +28,30 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
         clearErrors();
 
-        const name = nameInput.value.trim();
-        const email = emailInput.value.trim();
+        const name = nameInput.value;
+        const email = emailInput.value;
         const password = passwordInput.value;
         const cpassword = cpasswordInput.value;
 
         let isValid = true;
 
         if (name === "") {
-            nameError.textContent = "Please enter your full name";
+            nameError.textContent = "Enter your full name";
             isValid = false;
         }
 
         if (email === "") {
-            emailError.textContent = "Please enter your email";
+            emailError.textContent = "Enter your email";
             isValid = false;
         }
 
         if (password === "") {
-            passError.textContent = "Please enter a password";
+            passError.textContent = "Enter a password";
             isValid = false;
         }
 
         if (cpassword === "") {
-            cpassError.textContent = "Please confirm your password";
+            cpassError.textContent = "Confirm your password";
             isValid = false;
         }
 
@@ -62,15 +62,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!isValid) return;
 
-        // Save to localStorage
+        //localStorage saving
         localStorage.setItem("signupName", name);
         localStorage.setItem("signupPass", password);
 
-        formMessage.textContent = "✅ Signup successful! Redirecting to login...";
+        formMessage.textContent = "Signup successful! Login again";
         formMessage.classList.add("success");
 
         setTimeout(() => {
             window.location.href = "login.html";
-        }, 1500);
+        }, 2500);
     });
 });

@@ -32,12 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
         let isValid = true;
 
         if (!enteredNameOrEmail) {
-            unameError.textContent = "Please enter your name or email";
+            unameError.textContent = "Enter your name or email";
             isValid = false;
         }
 
         if (!enteredPass) {
-            passError.textContent = "Please enter your password";
+            passError.textContent = "Enter your password";
             isValid = false;
         }
 
@@ -55,11 +55,11 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        formMessage.textContent = "✅ Login Successful! Redirecting...";
+        formMessage.textContent = "Login Successful! Welcome...";
         formMessage.classList.add("success");
 
         setTimeout(() => {
             window.location.href = "dashboard.html";
-        }, 1500);
+        }, 2500);
     });
 });
