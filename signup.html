@@ -1,70 +1,36 @@
 <html>
 <head>
     <title>Sign up</title>
-    <link rel = "stylesheet" href = "style.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+    </style>
 </head>
 <body>
-    <h1> Get Started!</h1>
-    <form id = "signup" action = "">  
-        <label form = "FullName"> </label>
-        <input type = "text" id = "FullName" placeholder = "Enter your Full Name" required><br>
+    <h1>Get Started!</h1>
+    <form id="signup" action="">
+        <label for="FullName"></label>
+        <input type="text" id="FullName" placeholder="Enter your Full Name">
+        <div id="nameError" class="error"></div>
 
-        <label form = "email"> </label>
-        <input type = "email" id = "email" placeholder= "Enter your email id" required><br>
+        <label for="email"></label>
+        <input type="email" id="email" placeholder="Enter your email id">
+        <div id="emailError" class="error"></div>
 
-        <label form = password>  </label>
-        <input type = "password" id = "password" placeholder= "Enter your password" required><br>
+        <label for="password"></label>
+        <input type="password" id="password" placeholder="Enter your password">
+        <div id="passError" class="error"></div>
 
-        <label form = cpassword>  </label>
-        <input type = "password" id = "cpassword" placeholder= "Confirm your password" required><br>
-        
-        <div id = "message"></div>
+        <label for="cpassword"></label>
+        <input type="password" id="cpassword" placeholder="Confirm your password">
+        <div id="cpassError" class="error"></div>
 
-        <button type = "submit"> Signup</button>
-         <p> Already an user ? <a href = "./login.html">Login</a></p>
+        <div id="formMessage"></div>
+
+        <button type="submit">Signup</button>
+        <p>Already a user? <a href="./login.html">Login</a></p>
     </form>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const form = document.getElementById("signup");
-            const mDiv = document.getElementById("message");
 
-            const fullNameInput = document.getElementById("FullName");
-            const emailInput = document.getElementById("email");
-            const passwordInput = document.getElementById("password");
-            const cpasswordInput = document.getElementById("cpassword");
-
-            [passwordInput, cpasswordInput].forEach(input => {
-                input.addEventListener("input", () => {
-                    mDiv.textContent = "";
-                    mDiv.classList.remove("success");
-                });
-            });
-
-            form.addEventListener("submit", function (e) {
-                e.preventDefault();
-
-                const fullName = fullNameInput.value;
-                const email = emailInput.value;
-                const password = passwordInput.value;
-                const cpassword = cpasswordInput.value;
-
-                if (password !== cpassword) {
-                    mDiv.textContent = "Passwords do not match!";
-                    return;
-                }
-
-                localStorage.setItem("signupName", fullName);
-                localStorage.setItem("signupPass", password);
-
-                mDiv.textContent = "Signup success! login again.";
-                mDiv.classList.add("success");
-
-                setTimeout(() => {
-                    window.location.href = "login.html";
-                }, 1500);
-            });
-        });
-    </script>
+    <script src="signup.js" defer ></script>
 </body>
 </html>

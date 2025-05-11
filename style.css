@@ -62,3 +62,22 @@ a{
 #message.success {
     color: green;
 }
+
+.error {
+    color: red;
+    font-size: 13px;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    text-align: left;
+}
+.success {
+    color: green;
+    font-size: 14px;
+    margin-top: 10px;
+}
+input {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 8px;
+}

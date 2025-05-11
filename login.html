@@ -1,57 +1,25 @@
 <html>
-    <head>
-        <title>Home Page</title>
-        <link rel = "stylesheet" href = "style.css">
-    </head>
-    <body>
-        <h1 class = "t1">Welcome Back!</h1>
-        <form id= "login" action="">
-            <label for="uname"> </label>
-            <input type = "text" id = "uname" placeholder="Enter your name" required><br>
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="t1">Welcome Back!</h1>
+    <form id="login" action="">
+        <label for="uname"></label>
+        <input type="text" id="uname" placeholder="Enter your name or email">
+        <div id="unameError" class="error"></div>
 
-            <label for="pass"> </label>
-            <input type = "password" id = "pass" placeholder="Enter your password" required><br>
-            
-            <div id="message"></div>
+        <label for="pass"></label>
+        <input type="password" id="pass" placeholder="Enter your password">
+        <div id="passError" class="error"></div>
 
-            <button type="submit">Login</button>
-            <p>New User ? <a href="signup.html">Sign up</a></p>
-        </form>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const form = document.getElementById("login");
-            const mDiv = document.getElementById("message");
+        <div id="formMessage" class="success"></div>
 
-            const unameInput = document.getElementById("uname");
-            const passInput = document.getElementById("pass");
+        <button type="submit">Login</button>
+        <p>New User? <a href="signup.html">Sign up</a></p>
+    </form>
 
-            [unameInput, passInput].forEach(input => {
-                input.addEventListener("input", () => {
-                    mDiv.textContent = "";
-                    mDiv.classList.remove("success");
-                });
-            });
-
-            form.addEventListener("submit", function (e) {
-                e.preventDefault();
-
-                const enteredName = unameInput.value;
-                const enteredPass = passInput.value;
-
-                const storedName = localStorage.getItem("signupName");
-                const storedPass = localStorage.getItem("signupPass");
-
-                if (enteredName === storedName && enteredPass === storedPass) {
-                    mDiv.textContent = "Login Successful!";
-                    mDiv.classList.add("success");
-                    setTimeout(() => {
-                        window.location.href = "dashboard.html";
-                    }, 1500);
-                } else {
-                    mDiv.textContent = "Incorrect name or password!";
-                }
-            });
-        });
-    </script>
-    </body>
+    <script src="login.js" defer></script>
+</body>
 </html>
